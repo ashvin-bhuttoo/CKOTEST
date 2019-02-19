@@ -16,7 +16,11 @@ This Repository Contains the Solution Folders:
 
 Steps to use this Repository's Code:<br/>
 
-1. Open API/API.sln, BUILD SOLUTION (packages will be restored and may take some time)
-2. Open API_Test/API_Test.sln, BUILD SOLUTION (packages will be restored and may take some time)
-3. Run Project WebAPI in solution API.sln, Wait for the Aspnet development server to start on port 1947
-4. Run all tests found in solution API_Test.sln in Test Explorer
+1. Open API/API.sln in one Visual Studio 2015 instance (INST001), BUILD SOLUTION (packages will be restored and may take some time)
+2. Open API_Test/API_Test.sln in another Visual Studio 2015 instance (INST002), BUILD SOLUTION (packages will be restored and may take some time)
+3. Run Project WebAPI in solution API.sln on INST001, Wait for IISEXPRESS development server to start listening on port 1947
+4. Run all tests found in solution API_Test.sln using Test Explorer on INST002
+
+Note: <br/>
+The API Documentation is the default page that loads on http://localhost:1947<br/>
+The Unit test codes are incomplete.
