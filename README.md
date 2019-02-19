@@ -2,19 +2,19 @@
 
 This Repository Contains the Solution Folders:
 
-1. API
-	a. ClientLibrary
-		This project is a Class Library that implements Part 2 of the CKO test using .NET Framework 4.5.2
-	b. WebAPI
-		This project implements Part 1 of the CKO test using ASPNET MVC WEBAPI on .NET 4.5.2 and a RESTFUL design.
+1. API<br/>
+	a. ClientLibrary<br/>
+		&nbsp;&nbsp;This project is a Class Library that implements Part 2 of the CKO test using .NET Framework 4.5.2<br/>
+	b. WebAPI<br/>
+		&nbsp;&nbsp;This project implements Part 1 of the CKO test using ASPNET MVC WEBAPI on .NET 4.5.2 and a RESTFUL design.<br/>
 
-2. API_Test
-	a. ClientLibrary_TEST
-		This project is a Unit Test project for API/ClientLibrary
-	b. WebAPI_TEST
-		This project is a Unit Test project for API/WebAPI
+2. API_Test<br/>
+	a. ClientLibrary_TEST<br/>
+		&nbsp;&nbsp;This project is a Unit Test project for API/ClientLibrary<br/>
+	b. WebAPI_TEST<br/>
+		&nbsp;&nbsp;This project is a Unit Test project for API/WebAPI<br/><br/>
 
-Steps to use this Repository's Code:
+Steps to use this Repository's Code:<br/>
 
 1. Open API/API.sln, BUILD SOLUTION (packages will be restored and may take some time)
 2. Open API_Test/API_Test.sln, BUILD SOLUTION (packages will be restored and may take some time)
