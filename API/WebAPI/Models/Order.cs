@@ -8,6 +8,6 @@ namespace WebAPI.Models
         public ulong productid { get; set; }
 
         public int quantity { get; set; }
-        public double unitprice { get; set; }
+        //public double unitprice { get; set; }
     }
 }

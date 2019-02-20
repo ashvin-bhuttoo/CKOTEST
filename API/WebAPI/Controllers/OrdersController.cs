@@ -58,8 +58,7 @@ namespace WebAPI.Controllers
          * Sample Request Content:
          *   {
 	     *       "productid": 1,
-	     *       "quantity": 1,
-	     *       "unitprice": 1.99
+	     *       "quantity": 1
          *   }
          *   
          * */
@@ -96,8 +95,7 @@ namespace WebAPI.Controllers
         * Sample Request Content:
         *   {
         *       "productid": 1,
-        *       "quantity": 1,
-        *       "unitprice": 1.99
+        *       "quantity": 1
         *   }
         *   
         * */
@@ -133,8 +131,7 @@ namespace WebAPI.Controllers
         * Sample Request Content:
         *   {
         *       "productid": 1,
-        *       "quantity": 1,
-        *       "unitprice": 1.99
+        *       "quantity": 1
         *   }
         *   
         * */
