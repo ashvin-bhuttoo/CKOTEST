@@ -492,15 +492,20 @@
             </summary>
             <param name="id">product id</param>
         </member>
+        <member name="M:WebAPI.Controllers.OrdersController.Put(WebAPI.Models.OrderItem)">
+            <summary>
+            Add an item to Order (increments quantity if existing productid added)
+            </summary>
+        </member>
         <member name="M:WebAPI.Controllers.OrdersController.Post(System.UInt64,WebAPI.Models.OrderItem)">
             <summary>
             Update specific item in Order using product id provided (overwrites existing item)
             </summary>
             <param name="id">product id</param>
         </member>
-        <member name="M:WebAPI.Controllers.OrdersController.Put(WebAPI.Models.OrderItem)">
+        <member name="M:WebAPI.Controllers.OrdersController.Post(WebAPI.Models.OrderItem)">
             <summary>
-            Add an item to Order (increments quantity if existing productid added)
+            Update specific item in Order (overwrites existing item)
             </summary>
         </member>
         <member name="M:WebAPI.Controllers.OrdersController.Delete(System.UInt64)">

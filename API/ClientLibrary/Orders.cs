@@ -44,16 +44,16 @@ namespace ClientLibrary
             return true;
         }
 
-        public async Task<bool> Update(WebAPI.Models.OrderItem orderItem) //POST
+        public async Task<bool> Update(ulong productid, WebAPI.Models.OrderItem orderItem) //POST
         {
-            HttpResponseMessage response = await client.PostAsJsonAsync($"api/Orders", orderItem);
+            HttpResponseMessage response = await client.PostAsJsonAsync($"api/Orders/{productid}", orderItem);
             response.EnsureSuccessStatusCode();
             return true;
         }
 
-        public async Task<bool> Remove(int orderid) //DELETE
+        public async Task<bool> Remove(int productid) //DELETE
         {
-            HttpResponseMessage response = await client.DeleteAsync($"api/Orders/{orderid}");
+            HttpResponseMessage response = await client.DeleteAsync($"api/Orders/{productid}");
             response.EnsureSuccessStatusCode();
             return true;
         }

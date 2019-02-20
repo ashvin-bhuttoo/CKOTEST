@@ -51,6 +51,44 @@ namespace WebAPI.Controllers
             return orderItems.FirstOrDefault(itm => itm.productid == id);
         }
 
+        // PUT: api/Orders
+        /* *
+         * 
+         * Required Request Header: Content-Type application/json
+         * Sample Request Content:
+         *   {
+	     *       "productid": 1,
+	     *       "quantity": 1,
+	     *       "unitprice": 1.99
+         *   }
+         *   
+         * */
+        /// <summary>
+        /// Add an item to Order (increments quantity if existing productid added)
+        /// </summary>
+        public HttpResponseMessage Put([FromBody]OrderItem item)
+        {
+            if (ModelState.IsValid && item != null && item?.productid != 0)
+            {
+                if (orderItems.All(c => c.productid != item.productid))
+                {
+                    orderItems.Add(item);
+                }
+                else
+                {
+                    int last_qty = orderItems.FirstOrDefault(c => c.productid == item.productid).quantity;
+                    orderItems.Remove(orderItems.FirstOrDefault(c => c.productid == item.productid));
+                    item.quantity = last_qty + item.quantity;
+                    orderItems.Add(item);
+                }
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            else
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            }
+        }
+
         // POST: api/Orders/5
         /* *
         * 
@@ -88,22 +126,22 @@ namespace WebAPI.Controllers
             }
         }
 
-        // PUT: api/Orders
+        // POST: api/Orders
         /* *
-         * 
-         * Required Request Header: Content-Type application/json
-         * Sample Request Content:
-         *   {
-	     *       "productid": 1,
-	     *       "quantity": 1,
-	     *       "unitprice": 1.99
-         *   }
-         *   
-         * */
+        * 
+        * Required Request Header: Content-Type application/json
+        * Sample Request Content:
+        *   {
+        *       "productid": 1,
+        *       "quantity": 1,
+        *       "unitprice": 1.99
+        *   }
+        *   
+        * */
         /// <summary>
-        /// Add an item to Order (increments quantity if existing productid added)
+        /// Update specific item in Order (overwrites existing item)
         /// </summary>
-        public HttpResponseMessage Put([FromBody]OrderItem item) 
+        public HttpResponseMessage Post([FromBody]OrderItem item)
         {
             if (ModelState.IsValid && item != null && item?.productid != 0)
             {
@@ -113,9 +151,7 @@ namespace WebAPI.Controllers
                 }
                 else
                 {
-                    int last_qty = orderItems.FirstOrDefault(c => c.productid == item.productid).quantity;
                     orderItems.Remove(orderItems.FirstOrDefault(c => c.productid == item.productid));
-                    item.quantity = last_qty + item.quantity;
                     orderItems.Add(item);
                 }
                 return new HttpResponseMessage(HttpStatusCode.OK);
