@@ -40,29 +40,25 @@ namespace ClientLibrary
         public async Task<bool> Add(OrderItem orderItem) //PUT
         {
             HttpResponseMessage response = await client.PutAsJsonAsync($"api/Orders", orderItem);
-            response.EnsureSuccessStatusCode();
-            return true;
+            return response.IsSuccessStatusCode;
         }
 
         public async Task<bool> Update(ulong productid, OrderItem orderItem) //POST
         {
             HttpResponseMessage response = await client.PostAsJsonAsync($"api/Orders/{productid}", orderItem);
-            response.EnsureSuccessStatusCode();
-            return true;
+            return response.IsSuccessStatusCode;
         }
 
         public async Task<bool> Remove(int productid) //DELETE
         {
             HttpResponseMessage response = await client.DeleteAsync($"api/Orders/{productid}");
-            response.EnsureSuccessStatusCode();
-            return true;
+            return response.IsSuccessStatusCode;
         }
 
         public async Task<bool> Clear() //DELETE
         {
             HttpResponseMessage response = await client.DeleteAsync($"api/Orders");
-            response.EnsureSuccessStatusCode();
-            return true;
+            return response.IsSuccessStatusCode;
         }
 
     }
