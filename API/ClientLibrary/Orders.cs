@@ -5,10 +5,10 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-using WebAPI.Models;
 
 namespace ClientLibrary
 {
+
     public class Orders
     {
         static HttpClient client = new HttpClient() {BaseAddress = new Uri("http://localhost:1947")};
@@ -37,14 +37,14 @@ namespace ClientLibrary
             return await response.Content.ReadAsAsync<OrderItem>();
         }
 
-        public async Task<bool> Add(WebAPI.Models.OrderItem orderItem) //PUT
+        public async Task<bool> Add(OrderItem orderItem) //PUT
         {
             HttpResponseMessage response = await client.PutAsJsonAsync($"api/Orders", orderItem);
             response.EnsureSuccessStatusCode();
             return true;
         }
 
-        public async Task<bool> Update(ulong productid, WebAPI.Models.OrderItem orderItem) //POST
+        public async Task<bool> Update(ulong productid, OrderItem orderItem) //POST
         {
             HttpResponseMessage response = await client.PostAsJsonAsync($"api/Orders/{productid}", orderItem);
             response.EnsureSuccessStatusCode();
@@ -65,5 +65,14 @@ namespace ClientLibrary
             return true;
         }
 
+    }
+
+
+    public class OrderItem
+    {
+        public ulong productid { get; set; }
+
+        public int quantity { get; set; }
+        //public double unitprice { get; set; }
     }
 }

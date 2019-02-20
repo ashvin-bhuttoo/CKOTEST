@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using ClientLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WebAPI.Models;
 
 namespace ClientLibrary_TEST
 {
