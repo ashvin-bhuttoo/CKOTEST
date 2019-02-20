@@ -21,6 +21,9 @@ Steps to use this Repository's Code:<br/>
 3. Run Project WebAPI in solution API.sln on INST001, Wait for IISEXPRESS development server to start listening on port 1947
 4. Run all tests found in solution API_Test.sln using Test Explorer on INST002
 
-Note: <br/>
-The API Documentation is the default page that loads on http://localhost:1947<br/>
-The Unit test codes are incomplete.
+Notes: <br/>
+The API Documentation is found in Documentation.docx<br/>
+
+Assumptions Made:<br/>
+1. The Orders controller api implemented only handles productid and quantity, other components would be used in the project such as a Products controller that would contain details of each product, details such as cost and descriptions.<br/>
+2. Common Codes/Interfaces between the WebAPI and ClientLibrary should normally have a shared library, but this approach was not taken in this demo project.
